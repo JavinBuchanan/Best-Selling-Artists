@@ -1,4 +1,3 @@
-Hello bubosaurus 
 #code to access dataset
 #set the url of the dataset
 url <- "https://www.kaggle.com/datasets/kabhishm/best-selling-music-artists-of-all-time"
@@ -10,3 +9,6 @@ file_path <- "best_selling_artists.csv"
 download.file(url, destfile=file_path)
 
 test change
+
+if (x > 50) then
+  x= no
