@@ -1,0 +1,9 @@
+#code to access dataset
+#set the url of the dataset
+url <- "https://www.kaggle.com/datasets/kabhishm/best-selling-music-artists-of-all-time"
+
+#set the file name and path where the dataset will be saved
+file_path <- "best_selling_artists.csv"
+
+#download the file from the URL and save it to the specified file path
+download.file(url, destfile=file_path)
