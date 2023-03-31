@@ -163,6 +163,12 @@ countbothfilters<-nrow(bothfilters)
 countthreefilters<-nrow(threefilters)
  print (countthreefilters)
 
+ print("A intersect B is")
+aintersectb <-countbothfilters/countdata
+ print (aintersectb)
+ 
+ 
+
 
 #PROBLEM STATEMENT 2
 
