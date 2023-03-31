@@ -139,7 +139,7 @@ Mode <- function(x) {
 }
 
 # Find the mode of the column
-mode_of_column <- Mode(data$TCU)
+datamode <- Mode(data$TCU)
 
 #PROBLEM STATEMENT 1
 
