@@ -29,6 +29,41 @@ data[45, "period_active"] <- "1963-2012"
 data[77, "period_active"] <- "1967-present"
 data[117, "period_active"] <- "1977-2008"
 
+data[,"Genre", drop = FALSE]
+
+> data <-
++     data %>%
++     mutate(Genre = as_factor(Genre))
+> str (data)
+
+#removing multiple ranges for each cell in Genre
+data[9, "Genre"] <- "Rock"
+data[2, "Genre"] <- "Rock"
+data[7, "Genre"] <- "Rock"
+data[17, "Genre"] <- "Rock"
+data[25, "Genre"] <- "Rock"
+data[28, "Genre"] <- "Rock"
+data[39, "Genre"] <- "Rock"
+data[41, "Genre"] <- "Rock"
+data[43, "Genre"] <- "Rock"
+data[47, "Genre"] <- "Rock"
+data[48, "Genre"] <- "Rock"
+data[53, "Genre"] <- "Pop"
+data[54, "Genre"] <- "Rock"
+data[64, "Genre"] <- "Rock"
+data[68, "Genre"] <- "Rock"
+data[76, "Genre"] <- "Rock"
+data[77, "Genre"] <- "Rock"
+data[78, "Genre"] <- "Rock"
+data[92, "Genre"] <- "Rock"
+data[96, "Genre"] <- "Pop"
+data[99, "Genre"] <- "Rock"
+data[104, "Genre"] <- "Rock"
+data[110, "Genre"] <- "Rock"
+data[113, "Genre"] <- "Rock"
+data[118, "Genre"] <- "Rock"
+data[120, "Genre"] <- "Rock"
+
 #changing present to 2022 to use integers only 
 data$period_active<-gsub("present","2022",as.character(data$period_active))
  
