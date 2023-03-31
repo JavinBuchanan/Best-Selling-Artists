@@ -31,10 +31,10 @@ data[117, "period_active"] <- "1977-2008"
 
 data[,"Genre", drop = FALSE]
 
-> data <-
+data <-
 +     data %>%
 +     mutate(Genre = as_factor(Genre))
-> str (data)
+str (data)
 
 #removing multiple ranges for each cell in Genre
 data[9, "Genre"] <- "Rock"
