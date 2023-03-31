@@ -67,3 +67,12 @@ data[120, "Genre"] <- "Rock"
 #changing present to 2022 to use integers only 
 data$period_active<-gsub("present","2022",as.character(data$period_active))
  
+# changing present to 2022 to use integers only 
+data$period_active<-gsub("present","2022",as.character(data$period_active))
+
+# load dplyr and tidyr library
+library(dplyr)
+library(tidyr)
+
+# Split name column into start year and end year
+data <- data %>% separate(period_active, c('Start Year', 'End Year'))
