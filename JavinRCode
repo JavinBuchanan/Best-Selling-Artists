@@ -17,4 +17,4 @@ sapply(data, function(m){
 data$TCU<-gsub("million","",as.character(data$TCU))
 data$Sales<-gsub("million",".",as.character(data$Sales))
 data$Sales<-gsub("\\..*","",as.character(data$Sales))
-
+data$Genre<-gsub("\\/.*","",as.character(data$Genre))
