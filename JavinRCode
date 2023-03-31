@@ -120,3 +120,10 @@ data <- data %>% relocate('Years Active', .before = Year)  #changing position of
 
 colnames(data)[6] <- "Year of First Chart Entry" #changing column 'Year' to 'Year of First Chart Entry'
 
+data$`TCU` <- as.numeric(data$`TCU`)  # Convert End Year to numeric
+
+mean(data$TCU)
+
+median(data$TCU)
+
+mode(data$TCU)
