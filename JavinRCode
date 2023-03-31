@@ -166,7 +166,42 @@ countthreefilters<-nrow(threefilters)
  print("A intersect B is")
 aintersectb <-countbothfilters/countdata
  print (aintersectb)
+
+bothfilters<-filter(usfilter, TCU>160)
+ threefilters<-filter(bothfilters, bothfilters$`Years Active`<15)
+ countthreefilters<-nrow(threefilters)
+ print (countthreefilters)
+
+ print("A intersect B is")
+
+countbothfilters/countdata
+
+aintersectb <-countbothfilters/countdata
+
+print(aintersectb)
+
+probabilityus<- countus/countdata 
+
+print (probabilityus)
+
+ bgivena <- aintersectb/probabilityus
+ print (bgivena)
  
+ print(countthreefilters)
+[1] 1
+ probabilitycgivenaandb <- countthreefilters/bgivena
+ print (probabilitycgivenaandb)
+[1] 5.642857
+ probabilitycandaandb <- countthreefilters/countus
+ print(probabilitycandaandb)
+[1] 0.01265823
+ probabilitycgivenaandb<- probabilitycandaandb/bgivena
+ print(probabilitycgivenaandb)
+[1] 0.07142857
+ answerforprob1= probabilitycgivenaandb*bigvena
+
+answerforprob1= probabilitycgivenaandb*bgivena
+ print(answerforprob1)
  
 
 
