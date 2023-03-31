@@ -240,10 +240,12 @@ print(z)
 pop_prob <- pnorm(pop_z, mean = 0, sd = 1, lower.tail = FALSE)
 print(pop_prob)
 
+morethan_popprob<- 1- pop_prob
+
 pop_count<-nrow(pop_filter)
 print(pop_count)
  
-pop_estim<-(pop_prob * pop_count)
+pop_estim<-(morethan_popprob * pop_count)
 print(pop_estim)
 
 y <- pop_filter$TCU
@@ -281,11 +283,12 @@ print(z)
 
 rock_prob <- pnorm(rock_z, mean = 0, sd = 1, lower.tail = FALSE)
 print(rock_prob)
+morethan_rockprob<- 1- rock_prob
 
 rock_count<-nrow(rock_filter)
 print(rock_count)
  
-rock_estim<-(rock_prob * rock_count)
+rock_estim<-(morethan_rockprob * rock_count)
 print(rock_estim)
 
 w <- pop_and_rock_filter$TCU
