@@ -2,6 +2,7 @@ if(!require(dplyr)) install.packages("dplyr")
 if(!require(dplyr)) install.packages("stringr")
 if(!require(dplyr)) install.packages("tidyr")
 if(!require(dplyr)) install.packages("crayon")
+if(!require(dplyr)) install.packages("ggplot2")
 
 #code to access dataset
 ##loading the dataset from my github profile
