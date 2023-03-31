@@ -108,13 +108,15 @@ data[120, "Genre"] <- "Rock"
 library(tidyr)
 
 # Split name column into start year and end year
-data <- data %>% separate(period_active, c('Start Year', 'End Year'))
+data <- data %>% separate(period_active, c('Start Year', 'End Year'))  #Separation of period active column
 
 
-data$`Start Year` <- as.numeric(data$`Start Year`)  # Convert one variable to numeric
-data$`End Year` <- as.numeric(data$`End Year`)  # Convert one variable to numeric
+data$`Start Year` <- as.numeric(data$`Start Year`)  # Convert Start Year to numeric
+data$`End Year` <- as.numeric(data$`End Year`)  # Convert End Year to numeric
 
  data$'Years Active' <- (data$'End Year' - data$'Start Year')
 
-data <- data %>% relocate('Years Active', .before = Year)
+data <- data %>% relocate('Years Active', .before = Year)  #changing position of column 'Years Active'
+
+colnames(data)[6] <- "Year of First Chart Entry" #changing column 'Year' to 'Year of First Chart Entry'
 
