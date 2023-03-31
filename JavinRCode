@@ -37,7 +37,7 @@ library(dplyr)
 library(DescTools)
 
 #code to access dataset
-##loading the dataset from my github profile
+##loading the dataset from the github profile
  data<- read.csv("https://raw.githubusercontent.com/JavinBuchanan/Best-Selling-Artists/main/Raw%20DataSet%20for%20Best%20Selling%20Artists.csv")
 
  #Finding the amount of observations and variables in the datset
@@ -257,7 +257,7 @@ fun1 <- dnorm(x3, mean = mean(y), sd = sd(y))
 # Histogram
 hist(y, prob = TRUE, col = "white",
      ylim = c(0, max(fun1)),
-     main = "Histogram with normal curve")
+     main = "Pop Histogram with normal curve")
 lines(x3, fun1, col = 2, lwd = 2)
 
 
@@ -299,7 +299,7 @@ fun1 <- dnorm(x4, mean = mean(w), sd = sd(w))
 # Histogram
 hist(w, prob = TRUE, col = "white",
      ylim = c(0, max(fun1)),
-     main = "Histogram with normal curve")
+     main = "Rock Histogram with normal curve")
 lines(x4, fun1, col = 2, lwd = 2)
 
 
