@@ -5,6 +5,13 @@ if(!require(crayon)) install.packages("crayon")
 if(!require(ggplot2)) install.packages("ggplot2")
 if(!require(evaluate)) install.packages("evaluate")
 
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(crayon)
+library(ggplot2)
+library(evaluate)
+
 #code to access dataset
 ##loading the dataset from my github profile
  data<- read.csv("https://raw.githubusercontent.com/JavinBuchanan/Best-Selling-Artists/main/Raw%20DataSet%20for%20Best%20Selling%20Artists.csv")
