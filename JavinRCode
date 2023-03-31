@@ -13,8 +13,22 @@ sapply(data, function(m){
   sum(is.na(m))
 })
 
-# removing characters from TCU and sales column
+#removing characters from TCU and sales column
 data$TCU<-gsub("million","",as.character(data$TCU))
 data$Sales<-gsub("million",".",as.character(data$Sales))
 data$Sales<-gsub("\\..*","",as.character(data$Sales))
 data$Genre<-gsub("\\/.*","",as.character(data$Genre))
+
+#removing multiple ranges for each cell in period_active
+data[9, "period_active"] <- "1965-2014"
+data[15, "period_active"] <- "1971-present"
+data[29, "period_active"] <- "1980-present"
+data[31, "period_active"] <- "1972-present"
+data[32, "period_active"] <- "1935-1995"
+data[45, "period_active"] <- "1963-2012"
+data[77, "period_active"] <- "1967-present"
+data[117, "period_active"] <- "1977-2008"
+
+#changing present to 2022 to use integers only 
+data$period_active<-gsub("present","2022",as.character(data$period_active))
+ 
