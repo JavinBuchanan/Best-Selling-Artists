@@ -1,14 +1,17 @@
 #code to access dataset
-#set the url of the dataset
-url <- "https://www.kaggle.com/datasets/kabhishm/best-selling-music-artists-of-all-time"
+##loading the dataset from my github profile
+ data<- read.csv("https://raw.githubusercontent.com/JavinBuchanan/Best-Selling-Artists/main/Raw%20DataSet%20for%20Best%20Selling%20Artists.csv")
 
-#set the file name and path where the dataset will be saved
-file_path <- "best_selling_artists.csv"
+ #Finding the amount of observations and variables in the datset
+ dim(data)
 
-#download the file from the URL and save it to the specified file path
-download.file(url, destfile=file_path)
+ #Viewing the datatypes of the variables in the dataset
+ str(data)
 
-test change
+#Finding out if there any data with N/As
+sapply(data, function(m){
+  sum(is.na(m))
+})
 
-if (x > 50) then
-  x= no
+data$TCU<-gsub("million","",as.character(data$TCU))
+data$Sales<-gsub("million",".",as.character(data$Sales))
