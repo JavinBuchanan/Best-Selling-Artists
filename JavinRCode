@@ -151,4 +151,8 @@ view(bothfilters)
 
 #PROBLEM STATEMENT 2
 
-random_sample<- data[sample(nrow(data), 50), ]
+rand_sample<- data[sample(nrow(data), 50), ]
+View(rand_sample)
+
+pop_filter<- filter(rand_sample, Genre=='Pop')
+view(pop_filter)
