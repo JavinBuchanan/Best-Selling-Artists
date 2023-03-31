@@ -168,5 +168,8 @@ countbothfilters<-nrow(bothfilters)
 rand_sample<- data[sample(nrow(data), 50), ]
 View(rand_sample)
 
-pop_filter<- filter(rand_sample, Genre=='Pop')
-view(pop_filter)
+pop_filter<- filter(rand_sample, rand_sample$Genre =='Pop' | rand_sample$Genre =='Pop ')
+View(pop_filter)
+
+rock_filter<- filter(rand_sample, rand_sample$Genre =='Rock' | rand_sample$Genre =='Rock ')
+View(rock_filter)
