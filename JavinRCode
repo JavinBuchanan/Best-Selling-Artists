@@ -147,6 +147,20 @@ usfilter<- filter(data, Country=='United States')
 view(usfilter)
 bothfilters<- filter(usfilter, TCU>160)
 view(bothfilters)
+threefilters<-filter(bothfilters, bothfilters$`Years Active`<15)
+view(threefilters)
+
+countdata <- nrow(data)
+ print (countdata)
+ 
+ countus <-nrow(usfilter)
+print (countus)
+
+
+countbothfilters<-nrow(bothfilters)
+> print (countbothfilters)
+
+
 
 
 #PROBLEM STATEMENT 2
