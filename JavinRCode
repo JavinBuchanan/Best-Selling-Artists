@@ -16,6 +16,7 @@ if(!require(funModeling)) install.packages("funModeling")
 if(!require(corrplot)) install.packages("corrplot")
 if(!require(dplyr)) install.packages("dplyr")
 if(!require(gridExtra))install.packages("gridExtra")
+if(!require(DescTools))install.packages("DescTools")
 # Loading all needed libraries
 
 library(dplyr)
@@ -33,6 +34,7 @@ library(reshape2)
 library(funModeling)
 library(corrplot)
 library(dplyr)
+library(DescTools)
 
 #code to access dataset
 ##loading the dataset from my github profile
@@ -114,11 +116,14 @@ data <- data %>% separate(period_active, c('Start Year', 'End Year'))  #Separati
 data$`Start Year` <- as.numeric(data$`Start Year`)  # Convert Start Year to numeric
 data$`End Year` <- as.numeric(data$`End Year`)  # Convert End Year to numeric
 
- data$'Years Active' <- (data$'End Year' - data$'Start Year')
+data$'Years Active' <- (data$'End Year' - data$'Start Year')
 
-data <- data %>% relocate('Years Active', .before = Year)  #changing position of column 'Years Active'
+#changing position of column 'Years Active'
+data <- data %>% relocate('Years Active', .before = Year)  
 
-colnames(data)[6] <- "Year of First Chart Entry" #changing column 'Year' to 'Year of First Chart Entry'
+
+#changing column 'Year' to 'Year of First Chart Entry'
+colnames(data)[6] <- "Year of First Chart Entry" 
 
 data$`TCU` <- as.numeric(data$`TCU`)  # Convert End Year to numeric
 
