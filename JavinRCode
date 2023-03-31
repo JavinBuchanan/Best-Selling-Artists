@@ -76,6 +76,7 @@ data[,"Genre", drop = FALSE]
 data <-
   data %>%
   mutate(Genre = as_factor(Genre))
+data$`TCU` <- as.numeric(data$`TCU`)  # Convert End Year to numeric
 str (data)
 
 #removing multiple ranges for each cell in Genre
@@ -125,7 +126,10 @@ data <- data %>% relocate('Years Active', .before = Year)
 #changing column 'Year' to 'Year of First Chart Entry'
 colnames(data)[6] <- "Year of First Chart Entry" 
 
-data$`TCU` <- as.numeric(data$`TCU`)  # Convert End Year to numeric
+usfilter<- filter(data, Country=='United States')
+view(usfilter)
+bothfilters<- filter(usfilter, TCU>160)
+view(bothfilters)
 
 mean(data$TCU)
 
