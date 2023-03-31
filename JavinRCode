@@ -203,4 +203,16 @@ pop_mean<-mean(pop_filter$TCU)
 pop_and_rock_filter<-filter(rand_sample, rand_sample$Genre =='Pop' | rand_sample$Genre =='Pop ' | rand_sample$Genre =='Rock' | rand_sample$Genre =='Rock ')
 view(pop_and_rock_filter)
 
-hist(pop_and_rock_filter$TCU)
+x <- pop_and_rock_filter$TCU
+
+# X-axis grid
+x2 <- seq(min(x), max(x), length = 40)
+
+# Normal curve
+fun <- dnorm(x2, mean = mean(x), sd = sd(x))
+
+# Histogram
+hist(x, prob = TRUE, col = "white",
+     ylim = c(0, max(fun)),
+     main = "Histogram with normal curve")
+lines(x2, fun, col = 2, lwd = 2)
