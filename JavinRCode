@@ -172,5 +172,23 @@ View(rand_sample)
 pop_filter<- filter(rand_sample, rand_sample$Genre =='Pop' | rand_sample$Genre =='Pop ')
 View(pop_filter)
 
+pop_mean<-mean(pop_filter)
+View(pop_mean)
+
 rock_filter<- filter(rand_sample, rand_sample$Genre =='Rock' | rand_sample$Genre =='Rock ')
 View(rock_filter)
+
+
+pop_mean<-mean(pop_filter)
+View(pop_mean)
+
+hist(pop_filter$TCU)
+hist(rock_filter$TCU)
+
+pop_mean<-mean(pop_filter$TCU)
+> print(pop_mean)
+[1] 115.7583
+> 
+> pop_median<-median(pop_filter$TCU)
+> print(pop_median)
+[1] 89.75
