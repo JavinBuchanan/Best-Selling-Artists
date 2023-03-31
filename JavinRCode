@@ -13,5 +13,8 @@ sapply(data, function(m){
   sum(is.na(m))
 })
 
+# removing characters from TCU and sales column
 data$TCU<-gsub("million","",as.character(data$TCU))
 data$Sales<-gsub("million",".",as.character(data$Sales))
+data$Sales<-gsub("\\..*","",as.character(data$Sales))
+
