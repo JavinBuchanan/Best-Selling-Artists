@@ -148,3 +148,7 @@ view(usfilter)
 bothfilters<- filter(usfilter, TCU>160)
 view(bothfilters)
 
+
+#PROBLEM STATEMENT 2
+
+random_sample<- data[sample(nrow(data), 50), ]
