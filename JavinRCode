@@ -109,3 +109,5 @@ library(tidyr)
 
 # Split name column into start year and end year
 data <- data %>% separate(period_active, c('Start Year', 'End Year'))
+
+data$'Years Active' <- (data$'End Year' - data$'Start Year')
