@@ -158,9 +158,10 @@ print (countus)
 
 
 countbothfilters<-nrow(bothfilters)
-> print (countbothfilters)
+ print (countbothfilters)
 
-
+countthreefilters<-nrow(threefilters)
+ print (countthreefilters)
 
 
 #PROBLEM STATEMENT 2
