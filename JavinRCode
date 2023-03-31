@@ -126,13 +126,24 @@ data <- data %>% relocate('Years Active', .before = Year)
 #changing column 'Year' to 'Year of First Chart Entry'
 colnames(data)[6] <- "Year of First Chart Entry" 
 
+# Central Tendicies
+datamean<- mean(data$TCU)
+
+datamedian<-median(data$TCU)
+
+# Define the Mode function
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Find the mode of the column
+mode_of_column <- Mode(data$TCU)
+
+#PROBLEM STATEMENT 1
+
 usfilter<- filter(data, Country=='United States')
 view(usfilter)
 bothfilters<- filter(usfilter, TCU>160)
 view(bothfilters)
 
-mean(data$TCU)
-
-median(data$TCU)
-
-mode(data$TCU)
