@@ -236,7 +236,7 @@ print(pop_standev)
 
 x_value<-160
 pop_z<- (x_value - pop_mean)/pop_standev
-print(z)
+print(pop_z)
 
 pop_prob <- pnorm(pop_z, mean = 0, sd = 1, lower.tail = FALSE)
 print(pop_prob)
@@ -280,7 +280,7 @@ print(rock_standev)
 
 x_value<-160
 rock_z<- (x_value - rock_mean)/rock_standev
-print(z)
+print(rock_z)
 
 rock_prob <- pnorm(rock_z, mean = 0, sd = 1, lower.tail = FALSE)
 print(rock_prob)
