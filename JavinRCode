@@ -292,7 +292,7 @@ print(rock_count)
 rock_estim<-(morethan_rockprob * rock_count)
 print(rock_estim)
 
-w <- pop_and_rock_filter$TCU
+w <- rock_filter$TCU
 
 # X-axis grid
 x4 <- seq(min(w), max(w), length = 40)
