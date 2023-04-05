@@ -51,16 +51,6 @@ sapply(data, function(m){
   sum(is.na(m))
 })
 
-boxplot(data$TCU,
-                  main = "Box and Whisker Plot showing Total Certified Units",
-                  xlab = "Total Certified Units",
-                  ylab = "",
-                  col = "orange",
-                  border = "brown",
-                  horizontal = TRUE,
-                  notch = TRUE
-          )
-
 #removing characters from TCU and sales column
 data$TCU<-gsub("million","",as.character(data$TCU))
 data$Sales<-gsub("million",".",as.character(data$Sales))
@@ -136,6 +126,17 @@ data <- data %>% relocate('Years Active', .before = Year)
 
 #changing column 'Year' to 'Year of First Chart Entry'
 colnames(data)[6] <- "Year of First Chart Entry" 
+
+
+boxplot(data$TCU,
+                  main = "Box and Whisker Plot showing Total Certified Units",
+                  xlab = "Total Certified Units",
+                  ylab = "",
+                  col = "orange",
+                  border = "brown",
+                  horizontal = TRUE,
+                  notch = TRUE
+          )
 
 # Central Tendicies
 datamean<- mean(data$TCU)
